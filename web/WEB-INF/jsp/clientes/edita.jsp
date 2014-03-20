@@ -7,7 +7,6 @@
         <meta charset="UTF-8">
         <title>Edita Cliente</title>
         <link rel="stylesheet"  type="text/css" href="<c:url value='/css/common.css'/>">
-
     </head>
     <body>
         <h1>Editar Cliente</h1>
@@ -20,6 +19,7 @@
         <form:label path="socio">Socio:<form:checkbox path="socio"/></form:label><br>
         <input name="enviar" type="Submit" value="Guardar">
         <input name="enviar" type="Reset" value="Limpiar">
+        <a href="listado">Volver</a>
         </form:form>
     </body>
 </html>

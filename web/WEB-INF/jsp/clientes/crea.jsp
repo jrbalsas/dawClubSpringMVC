@@ -1,4 +1,5 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,7 +18,8 @@
                 <form:errors cssClass="error" path="dni"/><br>
             <form:label path="socio">Socio:</form:label><form:checkbox path="socio"/><br>
             <input name="enviar" type="Submit" value="Guardar">
-            <input name="enviar" type="Reset" value="Limpiar">
+            <input name="enviar" type="reset" value="Limpiar">
+            <a href="listado">Volver</a>
         </form:form>
     </body>
 </html>

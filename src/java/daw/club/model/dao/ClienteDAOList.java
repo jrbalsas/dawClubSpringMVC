@@ -1,7 +1,6 @@
 package daw.club.model.dao;
 
 import daw.club.model.Cliente;
-import daw.club.model.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ClienteDAOList implements ClienteDAO{
 
     private static ArrayList<Cliente> clientes=null;
-    int idCliente = 1;
+    private static int idCliente = 1;
 
     public ClienteDAOList() {
         if (clientes == null) {
@@ -37,17 +36,21 @@ public class ClienteDAOList implements ClienteDAO{
 
     @Override
     public boolean crea(Cliente c) {
-        c.setId(idCliente++);
-        clientes.add(c);
+        Cliente nc=new Cliente(c);
+        nc.setId(idCliente);
+        clientes.add(nc);
+        c.setId(idCliente);
+        idCliente++;
         return true;
     }
         
     @Override
     public boolean guarda(Cliente c) {
         boolean result=false;
+        Cliente nc=new Cliente(c);
         for (int i=0; i<clientes.size();i++) {
-            if (clientes.get(i).getId()==c.getId()) {
-                clientes.set(i, c);
+            if (clientes.get(i).getId()==nc.getId()) {
+                clientes.set(i, nc);
                 result=true;
             }
         }       

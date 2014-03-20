@@ -11,7 +11,8 @@
         Nombre: ${cliente.nombre}<br>
         DNI:${cliente.dni}<br>
         Socio: ${cliente.socio?"Sí":"No"}<br>
-        <p><a href='${srvUrl}'>Volver</a>
+        <p><a href='${srvUrl}/edita?id=${cliente.id}'>Editar</a>&nbsp;
+            <a href='${srvUrl}'>Volver</a></p>
     </body>
 </html>
 

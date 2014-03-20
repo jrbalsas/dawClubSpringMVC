@@ -41,7 +41,9 @@
     <filter-name>encodingFilter</filter-name>  
     <url-pattern>/*</url-pattern>  
 </filter-mapping> 
+<!-- Disabled customized error mapping
 <error-page>
     <location>/main/error</location>
 </error-page>
+-->
 </web-app>
