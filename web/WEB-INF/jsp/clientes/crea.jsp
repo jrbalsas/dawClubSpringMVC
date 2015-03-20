@@ -9,6 +9,7 @@
         <link rel="stylesheet"  type="text/css" href="<c:url value='/css/common.css'/>">
     </head>
     <body>
+        <%@include file="/WEB-INF/layout/header.jspf" %>
         <h1>Alta Cliente</h1>
         <form:errors path="cliente.*" cssClass="error" element="div" />
         <form:form method="POST" modelAttribute="cliente" >
@@ -21,5 +22,6 @@
             <input name="enviar" type="reset" value="Limpiar">
             <a href="listado">Volver</a>
         </form:form>
+        <%@include file="/WEB-INF/layout/footer.jspf"%>
     </body>
 </html>

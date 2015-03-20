@@ -5,8 +5,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Listado de Clientes</title>
+        <link rel="stylesheet"  type="text/css" href="<c:url value='/css/common.css'/>">        
     </head> 
     <body>
+        <%@include file="/WEB-INF/layout/header.jspf" %>
         <h1>Listado de Clientes (JSTL)</h1>
         <c:if test="${empty clientes}">
             NO HAY CLIENTES DISPONIBLES
@@ -29,7 +31,6 @@
         </table>
         </c:if>
          <p><a href='${srvUrl}/crea'>Nuevo Cliente</a></p>
-         <c:import url="/WEB-INF/layout/footer.jsp"/>
          <%@include file="/WEB-INF/layout/footer.jspf"%>
     </body>
 </html>
