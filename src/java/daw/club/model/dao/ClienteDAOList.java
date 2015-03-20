@@ -3,9 +3,9 @@ package daw.club.model.dao;
 import daw.club.model.Cliente;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component("clienteDAOList")
+@Repository("clienteDAOList")
 public class ClienteDAOList implements ClienteDAO{
 
     private static ArrayList<Cliente> clientes=null;
