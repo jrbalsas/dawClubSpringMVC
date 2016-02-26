@@ -1,7 +1,7 @@
 dawClub using SpringMVC
 ==========
 
-Sample Netbeans project with CRUD Web App using SpringMVC
+Sample Maven Netbeans project with CRUD Web App using SpringMVC
 
 Features:
 -------------
