@@ -18,9 +18,18 @@
         <form:label path="dni">DNI:<form:input path="dni" /></form:label>
         <form:errors cssClass="error" path="dni"/><br>
         <form:label path="socio">Socio:<form:checkbox path="socio"/></form:label><br>
+        <form:label path="medioPago">Medio Pago:
+            <form:select path="medioPago" class="form-control">
+                <c:forEach var="medio" items="${mediosPago}" varStatus="elemento">
+                    <form:option value="${elemento.index}"  label="${medio}" />
+                </c:forEach>    
+            </form:select>
+        </form:label>
+        <p>
         <input name="enviar" type="Submit" value="Guardar">
         <input name="enviar" type="Reset" value="Limpiar">
         <a href="listado">Volver</a>
+        </p>
         </form:form>
         <%@include file="/WEB-INF/layout/footer.jspf"%>
     </body>

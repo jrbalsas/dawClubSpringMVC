@@ -2,6 +2,7 @@ package com.daw.club.controller;
 
 import com.daw.club.model.Cliente;
 import com.daw.club.model.dao.ClienteDAO;
+import com.daw.club.model.dao.MedioPagoDAO;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +27,8 @@ public class ClienteController {
     //@Qualifier("clienteDAOJdbc") //avoid ambiguity with differents DAO implementations
     @Qualifier("clienteDAOList")
     private ClienteDAO clienteDAO;
+    @Autowired
+    private MedioPagoDAO mediosPago;
     
     public ClienteController() {
     }
@@ -40,7 +43,7 @@ private void configView(HttpServletRequest request, HttpServletResponse response
     //Common variables for Views
     model.addAttribute("srvUrl", request.getContextPath()+request.getServletPath()+"/clientes");
     model.addAttribute("imgUrl", request.getContextPath()+"/images");
-    
+    model.addAttribute("mediosPago", mediosPago.buscaTodos().toArray());
 }
     
 @RequestMapping(value={"","/listado"}, method=RequestMethod.GET)

@@ -13,6 +13,7 @@
         Nombre: ${cliente.nombre}<br>
         DNI:${cliente.dni}<br>
         Socio: ${cliente.socio?"Sí":"No"}<br>
+        Socio: ${mediosPago[cliente.medioPago]}<br>
         <p><a href='${srvUrl}/edita?id=${cliente.id}'>Editar</a>&nbsp;
             <a href='${srvUrl}'>Volver</a></p>
         <%@include file="/WEB-INF/layout/footer.jspf"%>

@@ -14,13 +14,21 @@
         <form:errors path="cliente.*" cssClass="error" element="div" />
         <form:form method="POST" modelAttribute="cliente" >
             <form:label path="nombre" >Nombre:</form:label><form:input path="nombre" />
-                <form:errors cssClass="error" path="nombre"/> <br>
+            <form:errors cssClass="error" path="nombre"/> <br>
             <form:label path="dni">DNI:</form:label><form:input path="dni" />
-                <form:errors cssClass="error" path="dni"/><br>
+            <form:errors cssClass="error" path="dni"/><br>
             <form:label path="socio">Socio:</form:label><form:checkbox path="socio"/><br>
-            <input name="enviar" type="Submit" value="Guardar">
-            <input name="enviar" type="reset" value="Limpiar">
-            <a href="listado">Volver</a>
+            <form:label path="medioPago">Socio:</form:label>
+            <form:select path="medioPago" class="form-control">
+                <c:forEach var="medio" items="${mediosPago}" varStatus="elemento">
+                    <form:option value="${elemento.index}"  label="${medio}" />
+                </c:forEach>    
+            </form:select>
+            <p>            
+                <input name="enviar" type="Submit" value="Guardar">
+                <input name="enviar" type="reset" value="Limpiar">
+                <a href="listado">Volver</a>
+            </p>
         </form:form>
         <%@include file="/WEB-INF/layout/footer.jspf"%>
     </body>

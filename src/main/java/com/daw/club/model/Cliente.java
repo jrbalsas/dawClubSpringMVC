@@ -1,33 +1,26 @@
 package com.daw.club.model;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.NotEmpty;
-
 public class Cliente {
     private int id;
-    @NotEmpty
-    @Size(min=5,max=50)
     private String nombre;
-    @Pattern(regexp="\\d{7,8}(-?[a-zA-Z])?")
     private String dni;
-//    @Min(18)
-//    private int edad;
     private boolean socio;
+    private int medioPago;
 
 
     public Cliente () {
         id=0;
         nombre="Desconocido";
         socio=false;
+        medioPago=0;
     }
     
-    public Cliente(int id, String nombre, String dni, boolean socio) {
+    public Cliente(int id, String nombre, String dni, boolean socio,int medioPago) {
         this.id=id;
         this.nombre=nombre;
         this.dni=dni;
         this.socio=socio;
+        this.medioPago=medioPago;
     }
 
     /**Copy constructor*/
@@ -36,6 +29,7 @@ public class Cliente {
         this.nombre=c.nombre;
         this.dni=c.dni;
         this.socio=c.socio;
+        this.medioPago=c.medioPago;
     }
     
     /**
@@ -93,12 +87,12 @@ public class Cliente {
         this.socio = socio;
     }
 
-//    public int getEdad() {
-//        return edad;
-//    }
-//
-//    public void setEdad(int edad) {
-//        this.edad = edad;
-//    }
-//    
+    public int getMedioPago() {
+        return medioPago;
+    }
+
+    public void setMedioPago(int medioPago) {
+        this.medioPago = medioPago;
+    }
+    
 }
