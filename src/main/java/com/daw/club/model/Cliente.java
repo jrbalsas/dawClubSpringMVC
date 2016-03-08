@@ -1,8 +1,15 @@
 package com.daw.club.model;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Cliente {
     private int id;
+    @NotEmpty
+    @Size(min=5,max=50)
     private String nombre;
+    @Pattern(regexp="\\d{7,8}(-?[a-zA-Z])?")
     private String dni;
     private boolean socio;
     private int medioPago;

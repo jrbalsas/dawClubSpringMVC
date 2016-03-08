@@ -83,7 +83,7 @@ public String creaForm(ModelMap model) {
 public String crea( @ModelAttribute("cliente") @Valid Cliente cliente, BindingResult result, ModelMap model) {
         String view="redirect:listado"; //default view
 
-        //Programatic validation
+        //Programatic validation with personalized error messages. See messages.properties
         //if (checkDNI(cliente.getDNI())==false)  {
         //   result.rejectValue("dni", "error.cliente.dniduplicado", "El NIF ya lo tiene otro usuario");
         //   result.rejectValue("dni", "error.cliente.dniduplicado");
