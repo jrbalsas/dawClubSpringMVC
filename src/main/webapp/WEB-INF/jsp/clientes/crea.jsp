@@ -18,7 +18,7 @@
             <form:label path="dni">DNI:</form:label><form:input path="dni" />
             <form:errors cssClass="error" path="dni"/><br>
             <form:label path="socio">Socio:</form:label><form:checkbox path="socio"/><br>
-            <form:label path="medioPago">Socio:</form:label>
+            <form:label path="medioPago">Medio Pago</form:label>
             <form:select path="medioPago" class="form-control">
                 <c:forEach var="medio" items="${mediosPago}" varStatus="elemento">
                     <form:option value="${elemento.index}"  label="${medio}" />

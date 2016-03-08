@@ -16,7 +16,7 @@
         <c:if test="${not empty clientes}">
         <table>
             <tr><th>ID</th><th>Nombre</th><th>DNI</th><th>Socio</th>
-                <th>Medio Pago</th></tr>
+                <th>Medio Pago</th><th>Opciones</th></tr>
             <c:forEach var="c" items="${clientes}">
                 <c:set var="qry" value="?id=${c.id}"/>
                 <tr>
