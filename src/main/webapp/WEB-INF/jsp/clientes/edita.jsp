@@ -12,32 +12,33 @@
     <body class="container">
          <%@include file="/WEB-INF/layout/header.jspf" %>
         <main class="row">
-        <nav class="col-md-2">
+        <nav class="col-md-3">
             <h2>Opciones</h2>
             <ul class=" nav nav-pills nav-stacked">
-                <li ><a href="listado" class="btn btn-default">Volver</a></li>
+                <li><%@include file="/WEB-INF/layout/logoutBt.jspf" %></li>
+                <li ><a href="listado" >Volver</a></li>
             </ul>
         </nav>        
             <section>
         <h1>Editar Cliente</h1>
         <form:form method="POST" modelAttribute="cliente" cssClass="well col-md-4">
             <h3>Cliente nº: ${cliente.id}</h3>
-            <form:label path="nombre">Nombre: <form:input path="nombre" cssClass="form-control"/></form:label>
-            <form:errors cssClass="label label-warning" path="nombre"/> <br>
-        <form:label path="dni">DNI:<form:input path="dni" cssClass="form-control"/></form:label>
-        <form:errors cssClass="label label-warning" path="dni"/><br>
-        <form:label path="socio">Socio:<form:checkbox path="socio" cssClass="form-control"/></form:label><br>
-        <form:label path="medioPago">Medio Pago:
+            <form:label path="nombre" >Nombre:</form:label><form:input class='form-control' path="nombre" />
+            <div><form:errors cssClass="form-text text-danger" path="nombre"/></div>
+            <form:label path="dni">DNI:</form:label><form:input path="dni" cssClass="form-control"/>
+            <div><form:errors cssClass="form-text text-danger" path="dni"/></div>
+        <form:label path="socio">Socio:</form:label><form:checkbox path="socio" cssClass="form-control"/>
+        <form:label path="medioPago">Medio Pago:</form:label>
             <form:select path="medioPago" cssClass="form-control">
                 <c:forEach var="medio" items="${mediosPago}" varStatus="elemento">
                     <form:option value="${elemento.index}"  label="${medio}" />
                 </c:forEach>    
             </form:select>
-        </form:label>
+        
         <p>
-        <input name="enviar" type="Submit" value="Guardar">
-        <input name="enviar" type="Reset" value="Limpiar">
-        <a href="listado">Volver</a>
+        <input class="btn btn-primary" name="enviar" type="Submit" value="Guardar">
+        <input class="btn btn-default" name="enviar" type="Reset" value="Limpiar">
+        <a class="btn btn-default" href="listado">Volver</a>
         </p>
         </form:form>
             </section>
