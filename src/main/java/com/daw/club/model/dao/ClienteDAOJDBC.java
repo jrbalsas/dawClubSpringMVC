@@ -26,7 +26,7 @@ public class ClienteDAOJDBC implements ClienteDAO {
     private static final String SQL_BORRA="DELETE FROM Clientes WHERE id=?";
 
     //private static DataSource ds;
-    @Autowired
+    @Autowired(required=false)
     private DataSource ds;
     
     public ClienteDAOJDBC() {
