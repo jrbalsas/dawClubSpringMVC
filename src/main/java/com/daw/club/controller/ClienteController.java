@@ -70,7 +70,7 @@ public String visualizaId(@PathVariable Integer id, ModelMap model ) {
 public String borra(@RequestParam(value="id",defaultValue="0")Integer id, ModelMap model) {
         clienteDAO.borra(id);
         model.clear();
-        return "redirect:";
+        return "redirect:.";
 }
 
 @RequestMapping(value = "/crea", method=RequestMethod.GET)
