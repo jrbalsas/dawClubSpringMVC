@@ -25,8 +25,10 @@ public class ClienteController {
     
     @Autowired
     //@Qualifier("clienteDAOJdbc") //avoid ambiguity with differents DAO implementations
+    //@Qualifier("clienteDAOJdbcTemplate")
     @Qualifier("clienteDAOList")
     private ClienteDAO clienteDAO;
+
     @Autowired
     private MedioPagoDAO mediosPago;
     
