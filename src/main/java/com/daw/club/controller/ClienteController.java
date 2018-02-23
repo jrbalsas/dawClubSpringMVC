@@ -4,6 +4,7 @@ import com.daw.club.model.Cliente;
 import com.daw.club.model.dao.ClienteDAO;
 import com.daw.club.model.dao.MedioPagoDAO;
 import java.util.List;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ClienteController {
     
     @Autowired
+    //@Inject   //Spring Supports CDI compatible Dependency Injection
     //@Qualifier("clienteDAOJdbc") //avoid ambiguity with differents DAO implementations
     //@Qualifier("clienteDAOJdbcTemplate")
     @Qualifier("clienteDAOList")
