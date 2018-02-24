@@ -31,6 +31,12 @@
             <artifactId>spring-jdbc</artifactId>
             <version>5.0.2.RELEASE</version>
         </dependency>
+        <!-- Needed for using @Inject CDI annotation -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
