@@ -5,6 +5,10 @@
  */
 package com.daw.club;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import javax.enterprise.inject.Produces;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -29,23 +33,38 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = {"com.daw.club"})
 public class SpringMvcConfig implements WebMvcConfigurer {
 
- /** This is intended to be used when the Spring MVC DispatcherServlet is mapped 
-  * to "/" thus overriding the Servlet container's default handling of static resources.
-  */
+    private DataSource ds;
+
+    /**
+     * This is intended to be used when the Spring MVC DispatcherServlet is
+     * mapped to "/" thus overriding the Servlet container's default handling of
+     * static resources.
+     */
 //  @Override
 //    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 //        configurer.enable();
 //    }
+    @Bean
+    public DataSource getDataSource() {
+        
+        if (ds == null) {
+            try {
+                Context ctx = new InitialContext();
+                ds = (DataSource) ctx.lookup("java:global/jdbc/gestClub");
+            } catch (NamingException e) {
+                Logger.getGlobal().log(Level.SEVERE, e.getMessage());
+            }
+        }
+        return ds;        
+    }
 
     @Bean
-    public DataSource getDataSource() throws NamingException {
-        Context ctx = new InitialContext();
-        DataSource ds = (DataSource) ctx.lookup("java:/comp/env/jdbc/club");
-        return ds;
-    }
-    
-    @Bean public JdbcTemplate getJdbcTemplate(DataSource ds) {
-        return new JdbcTemplate(ds);
+    public JdbcTemplate getJdbcTemplate(DataSource ds) {
+        JdbcTemplate jt=null;
+        if (ds!=null) {
+            jt=new JdbcTemplate(ds);
+        }
+        return jt;
     }
     
     @Bean(name = "viewResolver")
@@ -55,13 +74,4 @@ public class SpringMvcConfig implements WebMvcConfigurer {
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
-
-    @Bean
-    MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasename("messages");
-        messageSource.setUseCodeAsDefaultMessage(true);
-        return messageSource;
-    }
-
 }

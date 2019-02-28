@@ -1,6 +1,5 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -22,7 +21,7 @@
             <section>
         <h1>Editar Cliente</h1>
         <form:form method="POST" modelAttribute="cliente" cssClass="well col-md-4">
-            <h3>Cliente nÂº: ${cliente.id}</h3>
+            <h3>Cliente nº: ${cliente.id}</h3>
             <form:label path="nombre" >Nombre:</form:label><form:input class='form-control' path="nombre" />
             <div><form:errors cssClass="form-text text-danger" path="nombre"/></div>
             <form:label path="dni">DNI:</form:label><form:input path="dni" cssClass="form-control"/>

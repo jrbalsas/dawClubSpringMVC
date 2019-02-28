@@ -38,12 +38,5 @@ public class ClubWebApplicationInitializer implements WebApplicationInitializer 
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/main/*");
 
-        // UTF-8 request param fix
-        FilterRegistration.Dynamic fr = container.addFilter("encodingFilter",
-                new CharacterEncodingFilter());
-        fr.setInitParameter("encoding", "UTF-8");
-        fr.setInitParameter("forceEncoding", "true");
-        fr.addMappingForUrlPatterns(null, true, "/*");
-
     }
 }

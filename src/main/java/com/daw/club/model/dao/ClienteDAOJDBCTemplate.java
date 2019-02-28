@@ -27,7 +27,7 @@ public class ClienteDAOJDBCTemplate implements ClienteDAO {
     private static final String SQL_BORRA="DELETE FROM Clientes WHERE id=?";
 
     
-    @Autowired
+    @Autowired (required = false)
     private JdbcTemplate jdbcTemplate;
 
     

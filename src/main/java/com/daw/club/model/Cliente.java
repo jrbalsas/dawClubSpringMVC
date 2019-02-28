@@ -1,15 +1,14 @@
 package com.daw.club.model;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.NotEmpty;
 
 public class Cliente {
     private int id;
-    @NotEmpty
-    @Size(min=5,max=50)
+    @Size(min = 4, max = 25, message = "La longitud ${validatedValue} debe estar entre {min} y {max} caracteres")
     private String nombre;
-    @Pattern(regexp="\\d{7,8}(-?[a-zA-Z])?")
+    @Pattern(regexp = "\\d{7,8}(-?[a-zA-Z])?", message = "{cliente.dni.formato}")
     private String dni;
     private boolean socio;
     private int medioPago;

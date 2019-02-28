@@ -6,6 +6,11 @@
         <session-timeout>
             30
         </session-timeout>
+        <cookie-config>
+                <http-only>true</http-only> <!-- Prevent client side scripting from accessing/manipulating session cookie. -->
+                <secure>false</secure> <!-- true to force send over TLS connection -->
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode> <!-- This disables URL rewriting. -->
     </session-config>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
@@ -15,6 +20,21 @@
         <location>/main/error</location>
     </error-page>
     -->
+    <!-- Creation of Datasource in Application Server -->
+<!--
+    <data-source>
+        <name>java:global/jdbc/gestClub</name>
+        <class-name>org.apache.derby.jdbc.ClientConnectionPoolDataSource</class-name>        
+        <server-name>localhost</server-name>
+        <port-number>1527</port-number>
+        <database-name>club</database-name>
+        <user>dawuser1</user>
+        <password>dawuser1</password>                                
+        <initial-pool-size>2</initial-pool-size>
+        <max-pool-size>10</max-pool-size>
+        <min-pool-size>5</min-pool-size>
+    </data-source>
+-->       
 <!-- Realm Access Rules -->
     <security-constraint>
         <display-name>CLIENTE</display-name>
@@ -34,7 +54,7 @@
         <realm-name>file</realm-name>
         <form-login-config>
             <form-login-page>/WEB-INF/jsp/login.jsp</form-login-page>
-            <form-error-page>/WEB-INF/jsp/login.jsp</form-error-page>
+            <form-error-page>/WEB-INF/jsp/login.jsp?error=true</form-error-page>
         </form-login-config>
     </login-config>
     <security-role>
