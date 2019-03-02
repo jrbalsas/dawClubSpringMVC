@@ -20,11 +20,13 @@
             <artifactId>spring-webmvc</artifactId>
             <version>5.1.5.RELEASE</version>
         </dependency>
+        <!-- JDBCTemplate dependency-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>5.1.5.RELEASE</version>
         </dependency>
+        <!-- Database driver -->
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
