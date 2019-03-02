@@ -7,48 +7,46 @@
             30
         </session-timeout>
         <cookie-config>
-                <http-only>true</http-only> <!-- Prevent client side scripting from accessing/manipulating session cookie. -->
-                <secure>false</secure> <!-- true to force send over TLS connection -->
+            <http-only>true</http-only> <!-- Prevent client side scripting from accessing/manipulating session cookie. -->
+            <secure>false</secure> <!-- true to force send over TLS connection -->
         </cookie-config>
         <tracking-mode>COOKIE</tracking-mode> <!-- This disables URL rewriting. -->
     </session-config>
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
     <!-- Disabled customized error mapping
     <error-page>
         <location>/main/error</location>
     </error-page>
     -->
     <!-- Creation of Datasource in Application Server -->
+    <!--
+        <data-source>
+            <name>java:global/jdbc/gestClub</name>
+            <class-name>org.apache.derby.jdbc.ClientConnectionPoolDataSource</class-name>        
+            <server-name>localhost</server-name>
+            <port-number>1527</port-number>
+            <database-name>club</database-name>
+            <user>dawuser1</user>
+            <password>dawuser1</password>                                
+            <initial-pool-size>2</initial-pool-size>
+            <max-pool-size>10</max-pool-size>
+            <min-pool-size>5</min-pool-size>
+        </data-source>
+    -->       
+    <!-- Realm Access Rules -->
+    <!--  Remove comments to enable authentication&authorization -->
 <!--
-    <data-source>
-        <name>java:global/jdbc/gestClub</name>
-        <class-name>org.apache.derby.jdbc.ClientConnectionPoolDataSource</class-name>        
-        <server-name>localhost</server-name>
-        <port-number>1527</port-number>
-        <database-name>club</database-name>
-        <user>dawuser1</user>
-        <password>dawuser1</password>                                
-        <initial-pool-size>2</initial-pool-size>
-        <max-pool-size>10</max-pool-size>
-        <min-pool-size>5</min-pool-size>
-    </data-source>
--->       
-<!-- Realm Access Rules -->
     <security-constraint>
         <display-name>CLIENTE</display-name>
         <web-resource-collection>
             <web-resource-name>cliente</web-resource-name>
-            <url-pattern>/main/clientes/*</url-pattern>
+            <url-pattern>/clientes/*</url-pattern>
         </web-resource-collection>
-<!--  Remove comments to enable authentication&authorization
-               <auth-constraint>
+        <auth-constraint>
             <role-name>USUARIOS</role-name>
             <role-name>ADMINISTRADORES</role-name>
         </auth-constraint>
- -->
-  </security-constraint>
+    </security-constraint>
+-->
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>file</realm-name>

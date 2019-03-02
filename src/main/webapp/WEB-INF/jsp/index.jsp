@@ -16,9 +16,9 @@
         <nav class="col-md-3">
         <h2>Opciones</h2>
         <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="main/clientes" >Gestión clientes</a></li>
-            <li class="disabled"><a href="main/instalaciones" >Gestión instalaciones</a></li>
-            <li class="disabled"><a href="main/servicios" >Gestión servicios</a></li>
+            <li class="active"><a href="clientes/" >Gestión clientes</a></li>
+            <li class="disabled"><a href="instalaciones/" >Gestión instalaciones</a></li>
+            <li class="disabled"><a href="servicios/" >Gestión servicios</a></li>
         </ul>
         </nav>
         <section class="col-md-9">

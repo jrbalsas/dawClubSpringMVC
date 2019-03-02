@@ -16,13 +16,13 @@
         <nav class="col-md-3">
         <h2>Opciones</h2>
         <ul class="nav nav-pills flex-colum">
-            <li class="nav-item"><a class="nav-link active" href="clientes" >Gesti贸n clientes</a></li>
-            <li class="nav-item"><a class="nav-link disabled" href="instalaciones" >Gesti贸n instalaciones</a></li>
-            <li class="nav-item"><a class="nav-link disabled" href="servicios" >Gesti贸n servicios</a></li>
+            <li class="nav-item"><a class="nav-link active" href="clientes" >Gesti髇 clientes</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="instalaciones" >Gesti髇 instalaciones</a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="servicios" >Gesti髇 servicios</a></li>
         </ul>
         </nav>
         <section class="col-md-9">
-        <h2>Identificaci贸n de usuario</h2>
+        <h2>Identificaci髇 de usuario</h2>
         <c:if test="${param.error}">
             <p class="alert alert-danger">Credenciales incorrectas</p>
         </c:if>

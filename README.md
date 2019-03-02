@@ -5,18 +5,17 @@ Sample Maven Netbeans project with CRUD Web App using SpringMVC
 
 Features:
 -------------
+- Spring 3+ programmatic configuration
+- Spring DispatcherServlet initialization using Servlet 3.0 programmatic configuration
 - Simple Entity CRUD jsp views
 - Simple DAOList for testing purpose
 - Sample DAOJDBC and Spring JdbcTemplate implementations
 - JEE DataSource definition (web.xml)
-- Sample Tomcat Connection Pool configuration file (context.xml)
 - Uses Spring CDI with qualifiers for DAO selection
 - DataSource Bean for JNDI connetion pool location
 - Bean Validation with customized messages
 - Optional access constraints for JEE Authentication/Authorization.
 - SpringMVC Logout controller and optional logout button for views
-- Spring 3+ programmatic configuration
-- Spring DispatcherServlet initialization using Servlet 3.0 programmatic configuration
 
 ## Requeriments
 

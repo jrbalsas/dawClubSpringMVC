@@ -14,8 +14,8 @@
                 <h2>Opciones</h2>
                 <ul class="nav nav-pills nav-stacked">
                 <li><%@include file="/WEB-INF/layout/logoutBt.jspf" %></li>
-                    <li class="active"><a href='${srvUrl}/edita?id=${cliente.id}' >Edita</a></li>
-                    <li> <a href='${srvUrl}' class="">Volver</a></li>
+                    <li class="active"><a href='edita?id=${cliente.id}' >Edita</a></li>
+                    <li> <a href='listado' class="">Volver</a></li>
                 </ul>
             </nav>   
             <section class="col-md-9">

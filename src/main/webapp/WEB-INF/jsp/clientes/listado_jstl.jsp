@@ -16,7 +16,7 @@
                 <ul class=" nav nav-pills nav-stacked">
                     <li><%@include file="/WEB-INF/layout/logoutBt.jspf" %></li>
 
-                    <li class="active"><a href='<c:url value="/main/clientes/crea"/>'>Nuevo Cliente</a></li>
+                    <li class="active"><a href='crea'>Nuevo Cliente</a></li>
                 </ul>
             </nav>
             <section class="col-md-9">
@@ -35,9 +35,9 @@
                                 <td>${c.nombre}</td><td>${c.dni}</td>
                                 <td>${c.socio?"Sí":"No"}</td>
                                 <td>${mediosPago[c.medioPago]}</td>
-                                <td><a class='btn btn-default' href='${srvUrl}/visualiza${qry}'>Ver</a>&nbsp;
-                                    <a class='btn btn-default' href='${srvUrl}/edita${qry}'>Editar</a>&nbsp;
-                                    <a class='btn btn-default' href='${srvUrl}/borra${qry}'>Borrar</a>&nbsp;
+                                <td><a class='btn btn-default' href='visualiza${qry}'>Ver</a>&nbsp;
+                                    <a class='btn btn-default' href='edita${qry}'>Editar</a>&nbsp;
+                                    <a class='btn btn-default' href='borra${qry}'>Borrar</a>&nbsp;
                                 </td>
                             </tr>
                         </c:forEach>

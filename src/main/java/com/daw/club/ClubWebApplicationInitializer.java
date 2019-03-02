@@ -24,19 +24,23 @@ public class ClubWebApplicationInitializer implements WebApplicationInitializer 
     @Override
     public void onStartup(ServletContext container) {
 
+        //Launch and configure SpringMVC
+        
         // Create the 'root' Spring application context
         AnnotationConfigWebApplicationContext rootContext
                 = new AnnotationConfigWebApplicationContext();
+        
+        //Configure SpringMVC
         rootContext.register(SpringMvcConfig.class);
 
         // Manage the lifecycle of the root application context
         container.addListener(new ContextLoaderListener(rootContext));
 
-        // Register and map the Spring dispatcher servlet
+        // Register and map the SpringMVC dispatcher servlet
         ServletRegistration.Dynamic dispatcher
                 = container.addServlet("springMvcFrontDispatcher", new DispatcherServlet(rootContext));
         dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/main/*");
+        dispatcher.addMapping("/"); //Map all urls to SpringMVC FrontDispatcher
 
     }
 }
