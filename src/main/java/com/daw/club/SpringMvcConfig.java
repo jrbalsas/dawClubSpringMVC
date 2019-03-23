@@ -55,7 +55,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
     /** Map routes to views without a controller*/
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/").setViewName("redirect:index.jsp");
     }
 
     @Bean
